@@ -1,0 +1,175 @@
+html{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+}
+
+body{
+    display: grid;
+    overflow-y: scroll;
+    width: 100%;
+    grid-template-columns: repeat(1,1fr);
+    background: #2e5e4d;
+    justify-items: center;
+    align-items: center;
+}
+
+.main{
+    display:flex;
+    border: black 2px solid;
+    align-items: center;
+    width: 95%;
+    height: 95%;
+    justify-content: space-evenly;
+    flex-direction: column-reverse;
+}
+
+.menu{
+    display:flex;
+    width: 90%;
+    align-items: center;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+.menuBtn{
+    word-wrap:anywhere;
+    aspect-ratio:1/1;
+    background: rgb(0 0 0);
+    font-size: 0.5em;
+    color: rgb(200 200 200);
+    font-weight: bold;
+    border: outset 5px black;
+    border-radius: 50%;
+}
+
+.statusDiv{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    word-spacing:0.5rem;
+}
+
+.status{
+    color:rgb(200 200 200);
+    font-size: larger;
+    text-shadow: 2px 2px 2px black;
+}
+
+.board{
+    display: grid;
+    width: 70%;
+    aspect-ratio:1/1;
+    border: outset 5px saddlebrown;
+    justify-items: center;
+    align-items: center;
+}
+.rowDiv{
+    display: grid;
+    width:100%;
+    grid-template-columns: repeat(8,1fr);
+    aspect-ratio:8/1;
+}
+
+.whiteCell{
+    display: grid;
+    height:100%;
+    background-color: rgb(255 225 121);
+    aspect-ratio:1/1;
+}
+
+.blackCell{
+    display: flex;
+    height:100%;
+    background-color: rgb(81 18 0 / 80%);
+    aspect-ratio:1/1;
+}
+
+.piece {
+    width: 100%;
+    aspect-ratio: 1/1;
+    z-index: 10;
+    background: none;
+    background-size: 100% 100%;
+    border:none;
+    box-shadow: -1px -1px 0px 0px black;
+}
+
+.promotionChoicesDiv{
+    position:absolute;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    width:30%;
+    aspect-ratio:4/1;
+    z-index:10;
+    background:black;
+    opacity:1;
+    border:outset saddlebrown 5px;
+}
+
+.selectGameModeDiv{
+    position: absolute;
+    z-index:20;
+    display: grid;
+    grid-template-columns:repeat(1,1fr);
+    background-color:saddlebrown;
+    border:solid black 5px;
+    border-radius:15px;
+    aspect-ratio:1/1;
+    align-content: space-evenly;
+}
+
+.selectGameModeBtn{
+    background:none;
+    border:groove black 2px;
+    font-size:medium;
+    background-color: #ffe179;
+    border-radius: 10px;
+    padding: 5px 0px 5px 0px;
+}
+
+@media (max-aspect-ratio:9/10) {
+    .main {
+        min-height: 50%;
+        width: 100%;
+        height:auto;
+        aspect-ratio: 6/7;
+        justify-content: space-evenly;
+    }
+    .board{
+        width:90%;
+        height:auto;
+    }
+    .menu {
+        max-height: 15%;
+        width: 90%;
+        flex-direction: row;
+        font-size: larger;
+    }
+}
+
+@media (min-aspect-ratio:12/10) {
+    .main {
+        min-width: 50%;
+        height: 100%;
+        width:auto;
+        aspect-ratio: 7/6;
+        flex-direction: row;
+    }
+    .board {
+        height: 90%;
+        width:auto;
+    }
+    .menu {
+        height: 90%;
+        width: auto;
+        max-width: 15%;
+        flex-direction: column;
+        font-size: larger;
+    }
+
+    .statusDiv {
+        writing-mode: vertical-rl;
+    }
+}
